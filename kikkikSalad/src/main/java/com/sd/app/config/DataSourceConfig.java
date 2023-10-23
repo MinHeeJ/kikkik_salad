@@ -19,7 +19,7 @@ public class DataSourceConfig {
 		String os = System.getProperty("os.name").toLowerCase(); 
 		if(os.contains("win"))
 			path = path.replaceFirst("/", ""); // window에서는 시작되는 /를 제거해야 한다.
-		dataSource.setURL("jdbc:oracle:thin:@final_high?TNS_ADMIN=" + path); // 서비스명은 지갑폴더명에서 WALLET_을 제외한 소문자이름_high (high/midium/low 중 선택)
+		dataSource.setURL("jdbc:oracle:thin:@kikkik_high?TNS_ADMIN=" + path); // 서비스명은 지갑폴더명에서 WALLET_을 제외한 소문자이름_high (high/midium/low 중 선택)
 		dataSource.setUser("admin");
 		dataSource.setPassword("Kikkik12345!");
 		return dataSource;
