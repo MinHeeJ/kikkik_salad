@@ -9,7 +9,7 @@
 		<version>2.7.17</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kh</groupId>
+	<groupId>com.sd</groupId>
 	<artifactId>kikkik_Salad</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kikkik_Salad</name>
@@ -18,14 +18,14 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -1,5 +1,5 @@
-<%@page import="com.semi.mvc.review.model.vo.Review"%>
-<%@page import="com.semi.mvc.review.model.vo.AttachmentReview"%>
+<%-- <%@page import="com.semi.mvc.review.model.vo.Review"%>
+<%@page import="com.semi.mvc.review.model.vo.AttachmentReview"%> --%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -46,12 +46,12 @@
 	</div>
 
 	<script>
-    document.addEventListener("DOMContentLoaded", function() {
+   <%--  document.addEventListener("DOMContentLoaded", function() {
         getReview();
         <% if(msg != null){ %>
     		alert('<%= msg %>');
    		<%  } %>
-    });
+    }); --%>
 
     let slide_index = 0;
     let slide_prev = document.querySelector('.slide_prev');

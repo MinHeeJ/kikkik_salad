@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.semi.mvc.member.model.vo.Member" %>
+<%-- <%@ page import="com.semi.mvc.member.model.vo.Member" %>
 <%@ page import="com.semi.mvc.member.model.vo.MemberRole" %>
-<%@ page import="com.semi.mvc.member.model.vo.Gender" %>
+<%@ page import="com.semi.mvc.member.model.vo.Gender" %> --%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.List"%>
 
 <%
-	String msg = (String) session.getAttribute("msg");
+/* 	String msg = (String) session.getAttribute("msg");
 	if(msg != null) session.removeAttribute("msg"); // 1회용
 	// System.out.println("msg = " + msg);
 	
@@ -24,7 +24,7 @@
 			if ("saveId".equals(name))
 				saveId = value;
 		}
-	}
+	} */
 %>
 
 <!DOCTYPE html>
@@ -35,9 +35,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<% 	if(loginMember != null) { %>
+
+
+
+
+<%-- <% 	if(loginMember != null) { %>
 	<script src="<%= request.getContextPath() %>/js/ws.js"></script>		
-<% 	} %>
+<% 	} %> --%>
+
+
+
+
 </head>
         
 <body>
@@ -49,6 +57,10 @@
         </a>
         
         <div class="header-wrapper">
+        
+        
+    <%--     
+        
         <% if(loginMember == null) {  %>
 			<!-- 로그인 전 -->
 			<div class="account_wrapper">
@@ -92,9 +104,13 @@
 	                <li><a href="<%= request.getContextPath()%>/member/logout">로그아웃</a></li>
 	            </ul>
 	        </div>
+	        
+	        
+	        
+	        
 	        <% }}%>
         </div>
-        
+         --%>
         <nav>
             <ul>
                 <li><a href="<%= request.getContextPath() %>">메인</a></li>
