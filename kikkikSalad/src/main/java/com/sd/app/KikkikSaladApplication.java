@@ -8,6 +8,7 @@ public class KikkikSaladApplication {
 
 	public static void main(String[] args) {
 		// 테스트용 주석
+		// 희진 테스트
 		SpringApplication.run(KikkikSaladApplication.class, args);
 	}
 
