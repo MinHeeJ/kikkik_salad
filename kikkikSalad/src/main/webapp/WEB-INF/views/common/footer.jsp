@@ -4,8 +4,8 @@
 
     <!-- 고객센터 -->
     <div class="serviceCenter">
-        <a href="<%= request.getContextPath()%>/board/faqList">고객센터</a>
-        <img class="clickImg" src="<%= request.getContextPath() %>/images/main/CSicon.png"; />
+        <a href="${pageContext.request.contextPath}/board/faqList">고객센터</a>
+        <img class="clickImg" src="${pageContext.request.contextPath}/resources/images/main/CSicon.png"; />
     </div>
 
     <footer>

@@ -33,7 +33,9 @@
 <meta charset="UTF-8">
 <title>킥킥샐러드</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" />
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
@@ -53,7 +55,7 @@
 
         <a class="header_image" href="<%= request.getContextPath() %>">
 
-            <img src="<%= request.getContextPath() %>/images/main/logo.png" alt="main_image" />
+            <img src="${pageContext.request.contextPath}/resources/images/main/logo.png" alt="main_image" />
         </a>
         
         <div class="header-wrapper">
@@ -62,19 +64,24 @@
     <%--     
         
         <% if(loginMember == null) {  %>
+        
+        
+         --%>
 			<!-- 로그인 전 -->
 			<div class="account_wrapper">
 				<ul class="account_list">
 				    <li>
-				    	<a href="<%= request.getContextPath() %>/member/memberLogin">로그인</a>
-				    	<img class="clickImg" src="<%= request.getContextPath() %>/images/main/login.png"/>
+				    	<a href="${pageContext.request.contextPath}/resources/member/memberLogin">로그인</a>
+				    	<img class="clickImg" src="${pageContext.request.contextPath}/resources/images/main/login.png"/>
 				    </li>
 				    <li>
-				    	<a href="<%= request.getContextPath() %>/member/memberEnroll">회원가입</a>
-				    	<img class="clickImg" src="<%= request.getContextPath() %>/images/main/signup.png"/>
+				    	<a href="${pageContext.request.contextPath}/resources/member/memberEnroll">회원가입</a>
+				    	<img class="clickImg" src="${pageContext.request.contextPath}/resources/images/main/signup.png"/>
 				    </li>
 				</ul>
 		    </div>
+		    
+		     <%-- 
 	<% }  else { 
 
 	        if(loginMember.getMemberRole() == MemberRole.U) { %>
@@ -109,8 +116,9 @@
 	        
 	        
 	        <% }}%>
+	  --%>
         </div>
-         --%>
+        
         <nav>
             <ul>
                 <li><a href="<%= request.getContextPath() %>">메인</a></li>

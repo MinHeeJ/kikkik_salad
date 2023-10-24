@@ -4,19 +4,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
-<script src="<%=request.getContextPath()%>/js/jquery-3.7.0.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-3.7.0.js"></script>
 <link rel="stylesheet"
-	href="<%=request.getContextPath() %>/css/index.css" />
+	href="${pageContext.request.contextPath}/resources/css/index.css" />
 
 
-	<div class="swiper slide_wrapper">
+	<div class="swiper slide_wrapper" style="margin: 1% auto;
+	">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide"
-				style="background-image: url('<%= request.getContextPath() %>/images/index/banner1.png');"></div>
+				style="background-image: url('${pageContext.request.contextPath}/resources/images/index/banner1.png');"></div>
 			<div class="swiper-slide"
-				style="background-image: url('<%= request.getContextPath() %>/images/index/banner2.png');"></div>
+				style="background-image: url('${pageContext.request.contextPath}/resources/images/index/banner2.png');"></div>
 			<div class="swiper-slide"
-				style="background-image: url('<%= request.getContextPath() %>/images/index/banner3.png');"></div>
+				style="background-image: url('${pageContext.request.contextPath}/resources/images/index/banner3.png');"></div>
 		</div>
 
 		<div class="slide_pagination">
@@ -34,7 +35,7 @@
 	<div class="recommend_contents">
 		<div id="balloon">
 		
-			<img src="<%= request.getContextPath() %>/images/index/balloon.png" id="choiceBallon" /> <span>고르기 힘들다면?</span>
+			<img src="${pageContext.request.contextPath}/resources/images/index/balloon.png" id="choiceBallon" /> <span>고르기 힘들다면?</span>
 		
 		
 		</div>
