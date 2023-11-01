@@ -17,23 +17,23 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 
 /*import com.sd.app.member.service.MemberService;*/
 
-
 @SuppressWarnings("deprecation")
-@EnableWebSecurity //@Configration 상속
+@EnableWebSecurity // @Configration 상속
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	/*
-	 * @Bean public PasswordEncoder passwordEncoder() { return new
-	 * BCryptPasswordEncoder(); }
-	 * 
-	 * @Autowired private DataSource dataSource;
-	 */
-
+	
+	 @Bean public PasswordEncoder passwordEncoder() { 
+		 return new
+	 BCryptPasswordEncoder(); }
+	 
+//	 @Autowired private DataSource dataSource;
+	  
+	 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/favicon.ico", "/resources/**", "/error");
 	}
-	
+
 	/*
 	 * @Autowired private MemberService memberService;
 	 * 
@@ -47,9 +47,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
-		http.authorizeRequests()
-			.antMatchers("/").permitAll()
+
+		http.authorizeRequests().antMatchers("/").permitAll()
 				/*
 				 * .antMatchers("/board/**").permitAll()
 				 * .antMatchers("/admin/**").hasAuthority("ADMIN")
@@ -61,36 +60,35 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				 * .antMatchers("/store/*").permitAll()
 				 * .antMatchers("/calendar/**").authenticated()
 				 */
-			.anyRequest().authenticated();
-		
-//		http.formLogin() // 
-//		.loginPage("/member/memberLogin.do")
-//		.loginProcessingUrl("/member/memberLogin.do")
-//		.usernameParameter("memberId")
-//		.passwordParameter("memberPwd")
-//		.defaultSuccessUrl("/", true)
-//		.permitAll();
-//	
-//		http.logout()
-//		.logoutUrl("/member/memberLogout.do")
-//		.logoutSuccessUrl("/")
-//		.permitAll();
+				.anyRequest().authenticated();
+
+		http.formLogin() // 
+		.loginPage("/member/memberLogin.do")
+		.loginProcessingUrl("/member/memberLogin.do")
+		.usernameParameter("memberId")
+		.passwordParameter("memberPwd")
+		.defaultSuccessUrl("/", true)
+		.permitAll();
+	
+		http.logout()
+		.logoutUrl("/member/memberLogout.do")
+		.logoutSuccessUrl("/")
+		.permitAll();
 //		
 //		http.oauth2Login()
 //		.loginPage("/member/memberLogin.do")
 //		.userInfoEndpoint()
 //		.userService(oauth2UserService);
-		
-		
+
 	}
-	
-	/* @Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		
-		auth.userDetailsService(memberService).passwordEncoder(passwordEncoder());
-	
-	} */
-	
-	
-	
+
+	/*
+	 * @Override protected void configure(AuthenticationManagerBuilder auth) throws
+	 * Exception {
+	 * 
+	 * auth.userDetailsService(memberService).passwordEncoder(passwordEncoder());
+	 * 
+	 * }
+	 */
+
 }
