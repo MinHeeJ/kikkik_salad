@@ -2,29 +2,59 @@
 
 /* 추가된 스타일 */
 
-
 #login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #86e319b0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 560px;
+  margin: 1% auto;
+  padding: 2.5% 2%;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 0.5px solid darkgreen;
+  box-shadow: 1px 2px 4px darkgreen;
+}
+
+
+@font-face {font-family: 'HakgyoansimWoojuR'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'MBC1961GulimM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'NanumSquareNeo-Variable'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'LotteMartHappy'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff') format('woff');}
+@font-face {font-family: 'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h1 {
+  text-align: center;
+  color: #8dbc21;
+  font-weight: bold;
+  font-size: 58px;
+  font-family: 'SBAggroB';
+  font-style: italic;
+  text-shadow: 1px 2px 1px darkgreen;
 }
 
 h2 {
   text-align: center;
-  color: #2b580c;
+  color: darkgreen;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 50px;
+  font-family: 'SBAggroB';
+  font-style: italic;
+  text-shadow: 1px 2px 1px #8dbc21;
+  margin-top: 5px;
 }
 .input-box {
   margin-bottom: 20px;
 }
 
 label {
+  font-family: 'GmarketSansMedium';
   font-weight: bold;
-  color: #2b580c;
+  color: darkgreen;
+  margin: 12px 0;
+  display: inline-block;
+  font-size: 20px;
 }
 
 input[type="text"],
@@ -34,40 +64,48 @@ input[type="password"] {
   padding: 8px;
   border: 1px solid #9a9999;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .login-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #008000;
+  display: inline-block;
+  width: 48%;
+  padding: 16px;
+  margin: 20px 3px;
+  background-color: darkgreen;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 18px;
   cursor: pointer;
+  font-family: 'GmarketSansMedium';
 }
 
 
 .signup-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #008000;
+  display: inline-block;
+  width: 48%;
+  padding: 16px;
+  margin: 18px 3px;
+  background-color: darkgreen;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 18px;
   cursor: pointer;
+  font-family: 'GmarketSansMedium';
 }
 
 .signup-button:hover {
-  background-color: #1f3d07;
+  background-color: #8dbc21;
+  font-weight: bold;
+  color: darkgreen;
+
 }
 
 .login-button:hover {
-  background-color: #1f3d07;
+  background-color: #8dbc21;
+  font-weight: bold;
+  color: darkgreen;
+
 }

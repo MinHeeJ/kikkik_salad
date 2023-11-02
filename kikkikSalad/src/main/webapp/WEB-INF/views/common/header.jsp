@@ -71,11 +71,11 @@
 			<div class="account_wrapper">
 				<ul class="account_list">
 				    <li>
-				    	<a href="${pageContext.request.contextPath}/resources/member/memberLogin">로그인</a>
+				    	<a href="${pageContext.request.contextPath}/member/memberLogin.do">로그인</a>
 				    	<img class="clickImg" src="${pageContext.request.contextPath}/resources/images/main/login.png"/>
 				    </li>
 				    <li>
-				    	<a href="${pageContext.request.contextPath}/resources/member/memberEnroll">회원가입</a>
+				    	<a href="${pageContext.request.contextPath}/member/memberEnroll">회원가입</a>
 				    	<img class="clickImg" src="${pageContext.request.contextPath}/resources/images/main/signup.png"/>
 				    </li>
 				</ul>

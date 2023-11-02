@@ -1,49 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/memberLogin.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/memberLogin.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+ 
+ 
+ <br>
+ <h1><i class="bi bi-stars"></i> 킥킥샐러드 <i class="bi bi-stars"></i></h1>
+ <h2>로그인</h2>
 <section id="login-container">
-  <%-- 에러 메시지가 있는 경우 표시 --%>
-  <% String errorMsg = (String) session.getAttribute("msg"); %>
-  <% if (errorMsg != null && !errorMsg.isEmpty()) { %>
-      <p class="error-msg"><%= errorMsg %></p>
-  <% } %>
-  
-  <%-- 잘못된 아이디가 있는 경우 표시 --%>
-  <% String invalidId = (String) session.getAttribute("invalidId"); %>
-  <% if (invalidId != null && !invalidId.isEmpty()) { %>
-     
-  <% } %>
-  
-  <%-- 잘못된 비밀번호가 있는 경우 표시 --%>
-  <% String invalidPassword = (String) session.getAttribute("invalidPassword"); %>
-  <% if (invalidPassword != null && !invalidPassword.isEmpty()) { %>
-  
-  <% } %>
-  
+
   <form name="loginFrm" action="${pageContext.request.contextPath}/member/memberLogin" method="POST">
-    <h2>로그인</h2>
-      <br>
   	
     <div class="input-box">
-      <label for="memberId">아이디:</label>
+      <label for="memberId"><i class="bi bi-person-fill"></i> 아이디</label>
       <input type="text" id="memberId" name="memberId" required>
-    </div>
-    <div>
-      <label for="password">비밀번호:</label>
+
+      <label for="password"><i class="bi bi-lock-fill"></i> 비밀번호</label>
       <input type="password" id="password" name="password" required>
     </div>
+    
     <div>
-      <label for="saveId">아이디 저장:</label>
+      <label for="saveId">아이디 저장 </label>
       <input type="checkbox" id="saveId" name="saveId">
     </div>
+    
     <div>
       <input type="submit" value="로그인" class="login-button">
+      <button onclick="location.href='${pageContext.request.contextPath}/member/memberEnroll'" class="signup-button">회원가입</button>
     </div>
   </form>
 
-  <div>
-    <button onclick="location.href='${pageContext.request.contextPath}/member/memberEnroll'" class="signup-button">회원가입</button>
-  </div>
 </section>
 
   <br>
@@ -51,13 +37,13 @@
   <br>
   <br>
 
-  
+<%--   
 <% if(loginMember != null) { %>
   <script src="<%= request.getContextPath() %>/js/ws.js"></script>
 <% } %>
-
+ --%>
 <script>
-  window.onload = () => {
+<%--   window.onload = () => {
     <% if(msg != null) { %>
       alert('<%= msg %>');
     <% } %>
@@ -81,7 +67,7 @@
         }
       };
     <% } %>
-  };
+  }; --%>
 </script>
 
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
