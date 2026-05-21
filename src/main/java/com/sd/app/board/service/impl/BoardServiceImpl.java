@@ -1,51 +1,52 @@
 package com.sd.app.board.service.impl;
 
-import com.sd.app.board.dto.BoardDTO;
+import com.sd.app.board.dto.BoardCreateRequestDTO;
+import com.sd.app.board.dto.BoardDetailResponseDTO;
+import com.sd.app.board.mapper.BoardMapper;
 import com.sd.app.board.service.BoardService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
-import java.util.ArrayList;
-import java.time.LocalDateTime;
+import java.util.stream.Collectors;
 
 // 게시판 서비스 구현
+@Service
 public class BoardServiceImpl implements BoardService {
 
-    private List<BoardDTO> boardList = new ArrayList<>();
+    @Autowired
+    private BoardMapper boardMapper;
 
     @Override
-    public BoardDTO createBoard(BoardDTO boardDTO) {
-        boardDTO.setId((long) (boardList.size() + 1));
-        boardDTO.setCreatedAt(LocalDateTime.now());
-        boardDTO.setUpdatedAt(LocalDateTime.now());
-        boardList.add(boardDTO);
-        return boardDTO;
+    public BoardDetailResponseDTO createBoard(BoardCreateRequestDTO request) {
+        boardMapper.insertBoard(request);
+        return boardMapper.getBoardById(request.getId());
     }
 
     @Override
-    public List<BoardDTO> getAllBoards() {
-        return new ArrayList<>(boardList);
+    public List<BoardDetailResponseDTO> getAllBoards() {
+        return boardMapper.getAllBoards().stream()
+                .sorted((b1, b2) -> b2.getCreatedAt().compareTo(b1.getCreatedAt()))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public BoardDTO getBoardById(Long id) {
-        return boardList.stream()
-                .filter(board -> board.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+    public BoardDetailResponseDTO getBoardById(Long id) {
+        return boardMapper.getBoardById(id);
     }
 
     @Override
-    public BoardDTO updateBoard(Long id, BoardDTO boardDTO) {
-        BoardDTO existingBoard = getBoardById(id);
-        if (existingBoard != null) {
-            existingBoard.setTitle(boardDTO.getTitle());
-            existingBoard.setContent(boardDTO.getContent());
-            existingBoard.setUpdatedAt(LocalDateTime.now());
+    public BoardDetailResponseDTO updateBoard(Long id, BoardCreateRequestDTO request) {
+        BoardDetailResponseDTO existingBoard = getBoardById(id);
+        if (existingBoard == null || !existingBoard.getWriterId().equals(request.getWriterId())) {
+            return null;  // 타인의 게시글 수정을 시도한 경우 실패 반환
         }
-        return existingBoard;
+        boardMapper.updateBoard(id, request);
+        return getBoardById(id);
     }
 
     @Override
     public void deleteBoard(Long id) {
-        boardList.removeIf(board -> board.getId().equals(id));
+        boardMapper.softDeleteBoard(id);
     }
 }
