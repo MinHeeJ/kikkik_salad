@@ -1,0 +1,19 @@
+-- 게시판 테이블 생성 스크립트
+CREATE TABLE Board (
+    board_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    writer_id BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (writer_id) REFERENCES Member(member_id)
+);
+
+-- 멤버 테이블 가정 (참조용)
+CREATE TABLE Member (
+    member_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    role VARCHAR(20) NOT NULL
+);
